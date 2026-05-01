@@ -1,0 +1,17 @@
+# Smart Surveillance System - Python Dependencies
+
+# Computer Vision and Image Processing
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Object Detection
+ultralytics>=8.0.0
+
+# Configuration Management
+pyyaml>=6.0
+
+# Testing Framework
+pytest>=7.4.0
+hypothesis>=6.82.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.0
