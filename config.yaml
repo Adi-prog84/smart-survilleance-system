@@ -36,9 +36,16 @@ logging:
 
 # Alert Settings
 alerts:
-  classes:  # Object classes that trigger alerts
+
+  # Object classes that will trigger an alert
+  classes:
     - person
-  cooldown: 5.0  # Minimum seconds between alerts for same class
+    - car
+    - cell phone
+
+  # Minimum time (in seconds) between alerts
+  # for the same object class
+  cooldown: 5.0
 
 # Performance Settings
 performance:

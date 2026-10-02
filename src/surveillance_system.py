@@ -8,6 +8,7 @@ all components and runs the main processing loop.
 import cv2
 import logging
 import time
+import winsound
 from typing import Optional
 
 from .models import Configuration
@@ -232,10 +233,17 @@ class SurveillanceSystem:
         for motion_region in processed_frame.motion_regions:
             self.event_logger.log_motion_detection(motion_region)
         
-        # Log alerts (if any)
+                # Log alerts (if any)
         for alert in alerts:
-            self.logger.info(f"ALERT: {alert.message}")
-    
+            self.logger.info(
+                f"ALERT: {alert.message}"
+            )
+
+            # Play alarm sound 5 times
+            for _ in range(5):
+                winsound.Beep(1000, 500)
+                time.sleep(0.2)
+                
     def _log_metrics_if_needed(self):
         """Log performance metrics every 60 seconds."""
         current_time = time.time()
